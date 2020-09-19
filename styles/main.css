@@ -1,0 +1,189 @@
+*, html {
+  margin: 0;
+  padding: 0;
+  /* overflow: hidden; */
+}
+
+main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  max-width: 100vw;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover, contain;
+  background-position: center;
+  background-image: url("https://images.unsplash.com/photo-1558677949-260173506bbf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80");
+  /* background: radial-gradient(circle, rgba(75,101,122,0) 0%, rgba(75,101,122,0.39399509803921573) 50%, rgba(75,101,122,0.9037990196078431) 100%); */
+}
+
+h1 {
+  margin: 20px;
+  font-family: 'Dosis', sans-serif;
+  font-size: 40px;
+}
+
+h2 {
+  margin-bottom: 10px;
+  color: aliceblue;
+  font-family: 'Dosis', sans-serif;
+}
+
+form {
+  display: flex;
+}
+
+/* Search field input */
+input {
+  width: 200px;
+  margin: 0 10px 20px 0;
+  padding: 10px;
+  border: 2px solid black;
+  box-shadow: 2px 2px 2px 2px rgb(46, 45, 45);
+}
+
+input:focus {
+  outline-color: rgb(75, 101, 122);;
+}
+
+input::placeholder {
+  color: grey;
+}
+
+/* Search button */
+.go {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 2px solid black;
+  box-shadow: 2px 2px 2px 2px rgb(46, 45, 45);
+}
+
+.go:hover {
+  background-color: rgb(75, 101, 122);
+  cursor: pointer;
+  color: aliceblue;
+}
+
+.go:focus {
+  outline-color: rgb(75, 101, 122);;
+}
+
+/* Div that displays the search results */
+.results {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  width: 70%;
+  max-height: 90vh;
+  overflow: scroll;
+  margin-bottom: 20px;
+}
+
+/* The book buttons created in the search results */
+.add {
+  background-color: transparent;
+  border: none;
+  /* margin: 8px; */
+}
+
+.selections {
+  display: flex;
+  align-items: center;
+  overflow: scroll;
+}
+
+.selected-div {
+  position: relative;
+}
+/* Book cover thumbnails */
+.cover {
+  margin: 10px;
+  box-shadow: 2px 2px 2px 3px rgb(46, 45, 45);
+}
+
+.x {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: black solid 2px;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-family: 'Dosis', sans-serif;
+  z-index: 2;
+}
+
+.x:hover {
+  background-color: rgb(75, 101, 122);
+  cursor: pointer;
+  color: aliceblue;
+}
+
+.x:focus {
+  outline-color: rgb(75, 101, 122);;
+}
+
+.submit {
+  display: none;
+  margin: 20px 0px;
+  padding: 10px;
+  border: 2px solid black;
+  box-shadow: 2px 2px 2px 2px rgb(46, 45, 45);
+}
+
+.submit:hover {
+  background-color: rgb(75, 101, 122);
+  cursor: pointer;
+  color: aliceblue;
+}
+
+.winner {
+  /* position: absolute; */
+  display: none;
+  /* background-color: rgba(255, 255, 255, 0.356); */
+  width: 100vw;
+  /* height: 100vh; */
+}
+
+.book-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: rgb(75, 101, 122) solid 3px;
+    width: 30%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.301);
+}
+
+.reset {
+  margin-top: 20px;
+  padding: 10px;
+  border: 2px solid black;
+  box-shadow: 2px 2px 2px 2px rgb(46, 45, 45);
+}
+
+.reset:hover {
+  background-color: #4b657a;
+  cursor: pointer;
+  color: aliceblue;
+}
+
+@media screen and (max-width: 650px) {
+  .selections {
+    flex-direction: column;
+  }
+
+  .book-div {
+    width: 50%;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+}
