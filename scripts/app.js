@@ -1,4 +1,7 @@
+
+
 function init() {
+
 
   const searchInput = document.querySelector('.search')
   let searchTerm = ''
@@ -27,12 +30,12 @@ function init() {
     if (!searchTerm) {
       searchInput.style.borderLeft = 'red solid 4px'
       searchInput.setAttribute('placeholder', 'Please enter a search query')
-      // Otherwise fetch the data from google books API
+    // Otherwise fetch the data from google books API
     } else {
       fetch(`https://www.googleapis.com/books/v1/volumes?q=${searchTerm}&key=AIzaSyAqCts0b05Db5NXbJ5YJ9XPzlIvb_MsktY`).then(function (response) {
         return response.json()
       }).then(function (data) {
-        // Add each of the 10 results into an array
+      // Add each of the 10 results into an array
         data.items.forEach(res => {
           resArr.push(res.volumeInfo)
         })
@@ -49,7 +52,7 @@ function init() {
   }
 
   function showResults() {
-    // Show the results div
+  // Show the results div
     results.style.display = ''
     // Hide the selections div
     selectionsDiv.style.display = 'none'
@@ -57,11 +60,11 @@ function init() {
     submitBtn.style.display = 'none'
     // Go through each of the returned volumes from the search response
     resArr.forEach(vol => {
-      // If the vol does not have a thumnail image on the json, don't throw an error and break the loop
+    // If the vol does not have a thumnail image on the json, don't throw an error and break the loop
       if (vol.imageLinks === undefined) {
         console.log('Book Cover Unavailable, skipping Volume')
       } else {
-        // Make each of the results clickable by creating buttons
+      // Make each of the results clickable by creating buttons
         addVol = document.createElement('button')
         addVol.classList.add('add')
         // Use the cover thumbnails to create image elements
@@ -80,7 +83,7 @@ function init() {
 
   // Click a book from the results to add it to the selection
   function addBook(e) {
-    // Store the clicked book cover in an variable
+  // Store the clicked book cover in an variable
     selection = e.target
     // Push the clicked book cover into an array to use for the submission
     selectionArr.push(selection)
@@ -162,6 +165,19 @@ function init() {
   
 }
 window.addEventListener('DOMContentLoaded', init)
+
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('scripts/sw.js').then( () => {
+      console.log('Service Worker Registered')
+    }, function(error) {
+      console.log('Service Worker Registration Failed')
+      console.log(error)
+    })
+  })
+} else {
+  console.log('Service Worker Not Supported')
+}
 
 // TODO
 // Don't duplicate additions to selectionArr - error message

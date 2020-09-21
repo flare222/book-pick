@@ -17,8 +17,9 @@ main {
   /* background: radial-gradient(circle, rgba(75,101,122,0) 0%, rgba(75,101,122,0.39399509803921573) 50%, rgba(75,101,122,0.9037990196078431) 100%); */
 }
 
-h1 {
-  margin: 20px;
+.heading1 {
+  margin-bottom: 20px;
+  /* padding: 20px; */
   font-family: 'Dosis', sans-serif;
   font-size: 40px;
 }
@@ -31,13 +32,17 @@ h2 {
 
 form {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  width: 90%;
 }
 
 /* Search field input */
 input {
-  width: 200px;
-  margin: 0 10px 20px 0;
+  width: 40%;
   padding: 10px;
+  margin-right: 15px;
   border: 2px solid black;
   box-shadow: 2px 2px 2px 2px rgb(46, 45, 45);
 }
@@ -48,14 +53,16 @@ input:focus {
 
 input::placeholder {
   color: grey;
+  font-size: 18px;
 }
 
 /* Search button */
 .go {
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
   padding: 10px;
   border: 2px solid black;
   box-shadow: 2px 2px 2px 2px rgb(46, 45, 45);
+  background-color: aliceblue;
 }
 
 .go:hover {
@@ -72,12 +79,18 @@ input::placeholder {
 .results {
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
+  justify-content: space-evenly;
   align-items: center;
   width: 70%;
   max-height: 90vh;
   overflow: scroll;
   margin-bottom: 20px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.results::-webkit-scrollbar {
+  display: none;
 }
 
 /* The book buttons created in the search results */
@@ -91,6 +104,12 @@ input::placeholder {
   display: flex;
   align-items: center;
   overflow: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.selections::-webkit-scrollbar {
+  display: none;
 }
 
 .selected-div {
@@ -114,6 +133,7 @@ input::placeholder {
   width: 30px;
   height: 30px;
   font-family: 'Dosis', sans-serif;
+  background-color: aliceblue;
   z-index: 2;
 }
 
@@ -124,7 +144,7 @@ input::placeholder {
 }
 
 .x:focus {
-  outline-color: rgb(75, 101, 122);;
+  outline-color: #4b657a;;
 }
 
 .submit {
@@ -133,6 +153,7 @@ input::placeholder {
   padding: 10px;
   border: 2px solid black;
   box-shadow: 2px 2px 2px 2px rgb(46, 45, 45);
+  background-color: aliceblue;
 }
 
 .submit:hover {
@@ -166,6 +187,7 @@ input::placeholder {
   padding: 10px;
   border: 2px solid black;
   box-shadow: 2px 2px 2px 2px rgb(46, 45, 45);
+  background-color: aliceblue;
 }
 
 .reset:hover {
@@ -175,8 +197,21 @@ input::placeholder {
 }
 
 @media screen and (max-width: 650px) {
+  input {
+    width: 90%;
+  }
+
+  .add {
+    height: 200px;
+  }
+
+  .results {
+    margin-bottom: 0px;
+  }
+
   .selections {
     flex-direction: column;
+    justify-content: space-evenly;
   }
 
   .book-div {
@@ -186,4 +221,8 @@ input::placeholder {
   h2 {
     font-size: 20px;
   }
+
 }
+
+/* make input bigger */
+/* give background to xBtn */
