@@ -13,7 +13,7 @@ main {
   background-repeat: no-repeat;
   background-size: cover, contain;
   background-position: center;
-  background-image: url('/assets/background.jpeg');
+  background-image: url('../assets/background.jpeg');
   /* background: radial-gradient(circle, rgba(75,101,122,0) 0%, rgba(75,101,122,0.39399509803921573) 50%, rgba(75,101,122,0.9037990196078431) 100%); */
 }
 

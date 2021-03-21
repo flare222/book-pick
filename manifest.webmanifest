@@ -1,0 +1,50 @@
+{
+    "name": "Book Pick",
+    "short_name": "TYS",
+    "icons": [
+        {
+            "src": "/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        },
+        {
+          "src": "/favicon-16x16.png",
+          "sizes": "16x16",
+          "type": "image/png"
+        },
+        {
+          "src": "/favicon-32x32.png",
+          "sizes": "32x32",
+          "type": "image/png"
+        },
+        {
+          "src": "/mstile-70x70.png",
+          "sizes": "70x70",
+          "type": "image/png"
+        },
+        {
+          "src": "/mstile-144x144.png",
+          "sizes": "144x144",
+          "type": "image/png"
+        },
+        {
+          "src": "/mstile-150x150.png",
+          "sizes": "150x150",
+          "type": "image/png"
+        },
+        {
+          "src": "/mstile-310x310.png",
+          "sizes": "310x310",
+          "type": "image/png"
+        }
+    ],
+    "start_url": "index.html",
+    "theme_color": "#4b657a",
+    "background_color": "#4b657a",
+    "display": "fullscreen"
+}
