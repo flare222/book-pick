@@ -13,11 +13,36 @@ main {
   background-repeat: no-repeat;
   background-size: cover, contain;
   background-position: center;
-  background-image: url("https://images.unsplash.com/photo-1558677949-260173506bbf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80");
+  background-image: url('/assets/background.jpeg');
   /* background: radial-gradient(circle, rgba(75,101,122,0) 0%, rgba(75,101,122,0.39399509803921573) 50%, rgba(75,101,122,0.9037990196078431) 100%); */
 }
 
-.heading1 {
+.banner {
+  display: none;
+  background-color: #4b657a;
+  padding: 15px;
+  /* border: 2px solid black;
+  box-shadow: 2px 2px 2px 2px rgb(46, 45, 45); */
+}
+
+p {
+  color: aliceblue;
+  font-family: sans-serif;
+  font-size: 16px;
+}
+
+.button-div {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.yes-no {
+  width: 40%;
+  margin-top: 10px;
+}
+
+h1 {
   margin-bottom: 20px;
   /* padding: 20px; */
   font-family: 'Dosis', sans-serif;
@@ -48,7 +73,7 @@ input {
 }
 
 input:focus {
-  outline-color: rgb(75, 101, 122);;
+  outline-color: #4b657a;;
 }
 
 input::placeholder {
@@ -56,13 +81,14 @@ input::placeholder {
   font-size: 18px;
 }
 
+
 /* Search button */
 .go {
   /* margin-bottom: 20px; */
   padding: 10px;
   border: 2px solid black;
   box-shadow: 2px 2px 2px 2px rgb(46, 45, 45);
-  background-color: aliceblue;
+  background-color: rgb(255, 255, 255);
 }
 
 .go:hover {
@@ -78,11 +104,11 @@ input::placeholder {
 /* Div that displays the search results */
 .results {
   display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
+  flex-wrap: wrap;
+  justify-content: space-around;
   align-items: center;
   width: 70%;
-  max-height: 90vh;
+  max-height: 80vh;
   overflow: scroll;
   margin-bottom: 20px;
   -ms-overflow-style: none;
@@ -101,8 +127,8 @@ input::placeholder {
 }
 
 .selections {
-  display: flex;
-  align-items: center;
+  /* display: flex;
+  align-items: center; */
   overflow: scroll;
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -133,7 +159,7 @@ input::placeholder {
   width: 30px;
   height: 30px;
   font-family: 'Dosis', sans-serif;
-  background-color: aliceblue;
+  background-color: rgb(255, 255, 255);
   z-index: 2;
 }
 
@@ -153,7 +179,7 @@ input::placeholder {
   padding: 10px;
   border: 2px solid black;
   box-shadow: 2px 2px 2px 2px rgb(46, 45, 45);
-  background-color: aliceblue;
+  background-color: rgb(255, 255, 255);
 }
 
 .submit:hover {
@@ -187,7 +213,7 @@ input::placeholder {
   padding: 10px;
   border: 2px solid black;
   box-shadow: 2px 2px 2px 2px rgb(46, 45, 45);
-  background-color: aliceblue;
+  background-color: rgb(255, 255, 255);
 }
 
 .reset:hover {
@@ -202,7 +228,7 @@ input::placeholder {
   }
 
   .add {
-    height: 200px;
+    /* height: 200px; */
   }
 
   .results {

@@ -3,25 +3,55 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <meta name="description" content="If you are stuck choosing your next great read, search for your top three choices (or five, or ten!) and this app will make the choice for you!">
   <link rel="stylesheet" href="styles/normalize.css">
   <link rel="stylesheet" href="styles/main.css">
-  <script type="text/javascript" src="scripts/app.js"></script>
+  <link rel="manifest" href="/manifest.webmanifest">
+  <script type="application/javascript" src="scripts/app.js"></script>
+
+    <!-- Open Graph-->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://flare222.github.io/book-pick">
+    <meta property="og:title" content="Book Pick">
+    <!-- <meta property="og:image" content="img/favicon.png"> -->
+    <meta property="og:description" content="Choose your next great read!">
+    <meta property="og:site_name" content="Book Pick">
+    <!-- Next tags are optional but recommended -->
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+  
+    <!-- Twitter cards-->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@flarer222">
+    <meta name="twitter:creator" content="flarer222">
+    <meta name="twitter:url" content="https://flare222.github.io/book-pick">
+    <meta name="twitter:title" content="Book Pick">
+    <meta name="twitter:description" content="Choose your next great read!">
+    <!-- <meta name="twitter:image" content="img/favicon.png"> -->
 
   <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@500&display=swap" rel="stylesheet">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
+  <!-- <link rel="manifest" href="/site.webmanifest"> -->
   <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#4b657a">
   <meta name="msapplication-TileColor" content="#2b5797">
   <meta name="theme-color" content="#4b657a">
-  <title>Treat Yo' Shelf</title>
+  <title>Book Pick</title>
 </head>
 <body>
   <main>
-    <h1 class="heading1">Treat Yo' Shelf</h1>
+    <div class="banner">
+      <p>Would you like to install this app to your homescreen?</p>
+      <div class="button-div">
+        <button type="button" class="yes-no">Yes Please</button>
+        <button type="button" class="yes-no">No Thanks</button>
+      </div>
+    </div>
+    <h1>Book Pick</h1>
       <form>
-        <input type="text" placeholder="Search for your book selections..." class="search" required>
+          <input type="text" placeholder="Search for your book selections..." class="search"   aria-label="Search Bar">
+        
         <button type="submit" class="go">Go</button>
       </form>
 
@@ -41,4 +71,22 @@
     </div>
   </main>
 </body>
+<script>
+  // Checking the browser to see if service workers are supported
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    // Registers the service worker file if all is well
+    navigator.serviceWorker.register('sw.js').then( () => {
+      console.log('Service Worker Registered')
+    }, function(error) {
+      // Sends an error if not
+      console.log('Service Worker Registration Failed')
+      console.log(error)
+    })
+  })
+} else {
+  // If the browser does not support service worker, log it in the console
+  console.log('Service Worker Not Supported')
+}
+</script>
 </html>

@@ -1,5 +1,3 @@
-
-
 function init() {
 
 
@@ -17,7 +15,9 @@ function init() {
   const bookDiv = document.querySelector('.book-div')
   const resetBtn = document.querySelector('.reset')
 
-
+  // Hide Banner
+  
+  
   // Take the value from the input field and store it in a variable
   searchInput.addEventListener('input', e => {
     searchTerm = e.target.value
@@ -166,19 +166,9 @@ function init() {
 }
 window.addEventListener('DOMContentLoaded', init)
 
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', function() {
-    navigator.serviceWorker.register('scripts/sw.js').then( () => {
-      console.log('Service Worker Registered')
-    }, function(error) {
-      console.log('Service Worker Registration Failed')
-      console.log(error)
-    })
-  })
-} else {
-  console.log('Service Worker Not Supported')
-}
+
 
 // TODO
 // Don't duplicate additions to selectionArr - error message
 // Live search?
+// if you enter the go button, but want new results, clear the array and start again
